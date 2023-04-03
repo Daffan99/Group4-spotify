@@ -6,6 +6,7 @@ import "../css/home.css";
 export default function Navbar() {
   return (
     <Box
+      z-index={0}
       className="navbar"
       bg="#1c1c1c"
       w="100%"

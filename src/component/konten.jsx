@@ -71,7 +71,7 @@ export default function Kertas() {
       <Flex
         // bg="red"
         // marginBottom={"100px"}
-
+        paddingLeft={"241px"}
         height={"390px"}
         flexDir={"column"}
       >
@@ -101,6 +101,7 @@ export default function Kertas() {
 
         <Flex
           // justifyContent={"space-between"}
+
           alignItems={"center"}
           h="100%"
           // height={"500px"}
@@ -118,7 +119,7 @@ export default function Kertas() {
       <Flex
         // bg="red"
         // marginBottom={"100px"}
-
+        paddingLeft={"241px"}
         height={"390px"}
         flexDir={"column"}
       >
