@@ -85,6 +85,7 @@ export default function SideBar() {
           </Container>
         </Box>
         <hr className="garis" />
+        <br />
         <Box className="scrolsidebar">
           <Box w="200px" h="35px">
             <a href="#">Your Playlist</a>
@@ -152,7 +153,7 @@ export default function SideBar() {
           </Box>
         </Box>
 
-        <Box>
+        {/* <Box>
           <Container>
             <Flex>
               <IconButton
@@ -165,7 +166,7 @@ export default function SideBar() {
               <div>Install App</div>
             </Flex>
           </Container>
-        </Box>
+        </Box> */}
       </Box>
     </>
   );
