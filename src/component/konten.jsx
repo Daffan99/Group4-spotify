@@ -37,38 +37,49 @@ export default function Kertas() {
 
   const data1 = [
     {
-      url: "http://www.pianoramix.com/assets/media/298-peaceful-piano-spotify-300x300r.jpeg",
-      judul: "Piaceful Piano",
-      desc: "Relax and indulge with beautiful piano pieces",
+      url: "https://upload.wikimedia.org/wikipedia/id/2/2b/Yoasobi_-_The_Book.jpg",
+      judul: "The Book",
+      desc: "2021 - Album",
     },
     {
-      url: "http://www.pianoramix.com/assets/media/298-peaceful-piano-spotify-300x300r.jpeg",
-      judul: "Piaceful Piano",
-      desc: "Relax and indulge with beautiful piano pieces",
+      url: "https://upload.wikimedia.org/wikipedia/en/d/dc/Yoasobi_-_The_Book_2.jpg",
+      judul: "The Book 2",
+      desc: "2021 - Album",
     },
     {
-      url: "http://www.pianoramix.com/assets/media/298-peaceful-piano-spotify-300x300r.jpeg",
-      judul: "Piaceful Piano",
-      desc: "Relax and indulge with beautiful piano pieces",
+      url: "https://upload.wikimedia.org/wikipedia/en/2/20/Yoasobi_-_E-Side.jpeg",
+      judul: "E-SIDE",
+      desc: "2021 - Album",
     },
     {
-      url: "http://www.pianoramix.com/assets/media/298-peaceful-piano-spotify-300x300r.jpeg",
-      judul: "Piaceful Piano",
-      desc: "Relax and indulge with beautiful piano pieces",
+      url: "https://upload.wikimedia.org/wikipedia/en/6/6d/Yoasobi_-_E-Side_2.png",
+      judul: "E-SIDE",
+      desc: "2022 - Album",
+    },
+    {
+      url: "https://upload.wikimedia.org/wikipedia/en/9/93/Yoru_ni_Kakeru_cover_art.jpg",
+      judul: "夜に駆ける",
+      desc: "2019 - Single",
+    },
+    {
+      url: "https://t2.genius.com/unsafe/409x409/https%3A%2F%2Fimages.genius.com%2F17f2e3fa1692719bbb588d9c6d2f5ca3.1000x1000x1.png",
+      judul: "祝福",
+      desc: "2022 - Single",
     },
   ];
 
   return (
     // <Box width="100%" bgColor="green" height="100vh">
     <Box
+      bgColor={"rgb(18, 18, 18)"}
       width={"100%"}
-      bg={"black"}
       // marginLeft={"241px"}
       height={"100vh - 90px"}
-      p={" 20px 20px"}
+      p={" 0px 20px"}
     >
       {/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */}
       <Flex
+        bgColor={"#121212"}
         // bg="red"
         // marginBottom={"100px"}
         paddingLeft={"241px"}
@@ -119,6 +130,7 @@ export default function Kertas() {
       <Flex
         // bg="red"
         // marginBottom={"100px"}
+        bgColor={"#121212"}
         paddingLeft={"241px"}
         height={"390px"}
         flexDir={"column"}
@@ -149,6 +161,7 @@ export default function Kertas() {
 
         <Flex
           // justifyContent={"space-between"}
+
           alignItems={"center"}
           h="100%"
           // height={"500px"}
@@ -171,22 +184,34 @@ export default function Kertas() {
 function Card(props) {
   return (
     <Box
+      bgColor={"#181818"}
       className="card"
       // bg={"pink"}
       width={"205px"}
-      height={"310px"}
+      height={"250px"}
       padding={"10px"}
       borderRadius={"5px"}
+      display={"flex"}
+      justifyContent={"center"}
+      alignItems={"center"}
     >
-      <Box mw={"185px"}>
-        <img src={props.url} alt="cover" width={"100%"} height={"100%"} />
-      </Box>
-      <Box h="20px"> </Box>
-      <Box color="white" height={"30px"} className="judul">
-        {props.judul}
-      </Box>
-      <Box color={"white"} height={"50px"} className="desc">
-        {props.desc}
+      {/* <Box
+        width={"205px"}
+        height={"250px"}
+        // position={"fixed"}
+        // bgColor={"red"}
+      ></Box> */}
+      <Box>
+        <Box mw={"185px"}>
+          <img src={props.url} alt="cover" width={"100%"} height={"100%"} />
+        </Box>
+        {/* <Box h="20px"> </Box> */}
+        <Box color="white" height={"30px"} className="judul">
+          {props.judul}
+        </Box>
+        <Box color={"white"} height={"50px"} className="desc">
+          {props.desc}
+        </Box>
       </Box>
     </Box>
   );

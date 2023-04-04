@@ -6,15 +6,18 @@ import "../css/home.css";
 export default function Navbar() {
   return (
     <Box
-      z-index={0}
+      // paddingBlock={"241"}
+
+      bgColor={"rgb(7, 7, 7)"}
       className="navbar"
       bg="#1c1c1c"
       w="100%"
       p={3}
       color="white"
-      // position={"fixed"}
+      position={"fixed"}
+      zIndex={1}
     >
-      <Flex justifyContent={"space-between"}>
+      <Flex justifyContent={"space-between"} paddingLeft={"241px"} zIndex={"0"}>
         <Box>
           <IconButton bg={"#1c1c1c"} icon={<ArrowLeftIcon />} />
           <IconButton bg={"#1c1c1c"} icon={<ArrowRightIcon />} />

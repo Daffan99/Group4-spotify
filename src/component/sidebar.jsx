@@ -30,7 +30,9 @@ export default function SideBar() {
                 cursor={"pointer"}
                 padding={"5px"}
               ></IconButton>
-              <div>Home</div>
+              <center>
+                <div style={{ color: "white" }}>Home</div>
+              </center>
             </Flex>
           </Container>
 
