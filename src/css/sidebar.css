@@ -65,7 +65,6 @@
   overflow-y: scroll;
 }
 .scrolsidebar {
-  border: 1px solid black;
   overflow-y: hidden;
   box-sizing: border-box;
   padding-bottom: "10px";

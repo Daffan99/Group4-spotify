@@ -21,6 +21,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { auth_types } from "../redux/types";
+import axios from "axios";
 
 export default function LoginPage() {
   const nav = useNavigate();
@@ -48,19 +49,39 @@ export default function LoginPage() {
     console.log("ada yang baru nih");
   }, [account.password]);
 
-  function login() {
-    if (account.email && account.password) {
-      dispatch({
-        type: auth_types.login,
-        payload: account,
+  async function login() {
+    // karena butuh waktu untnuk mendapatkan data dari API maka function di buat dengan asyncronus
+
+    await axios
+      .get("http://localhost:2000/user", {
+        params: {
+          email: account.email.toLocaleLowerCase(),
+          password: account.password,
+        },
+      })
+      .then((res) => {
+        if (res.data.length) {
+          dispatch({
+            type: auth_types.login,
+            payload: account,
+          });
+          localStorage.setItem("user", JSON.stringify(account));
+          return nav("/");
+        } else {
+          alert("email/password salah");
+        }
       });
-    } else {
-      alert("Email dan password wajib diisi ya bro...!!");
-    }
 
-    localStorage.setItem("user", JSON.stringify(account));
+    //     dispatch({
+    //       type: auth_types.login,
+    //       payload: account,
+    //     });
+    //   }
 
-    nav("/login");
+    //   localStorage.setItem("user", JSON.stringify(account));
+
+    //   return nav("/login");
+    // }
   }
 
   const [seePassword, setSeePassword] = useState(false);

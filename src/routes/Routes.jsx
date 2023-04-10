@@ -2,6 +2,7 @@ import { Route } from "react-router-dom";
 import ProtectedPage from "./ProtectedPage";
 import HomePage from "../pages/homepage";
 import LoginPage from "../pages/LoginPage";
+import RegisterPage from "../pages/registerPage";
 
 const routes = [
   <Route
@@ -18,6 +19,15 @@ const routes = [
     element={
       <ProtectedPage guestOnly={true} needLogin={false}>
         <LoginPage />
+      </ProtectedPage>
+    }
+  ></Route>,
+
+  <Route
+    path="/register"
+    element={
+      <ProtectedPage guestOnly={true} needLogin={false}>
+        <RegisterPage />
       </ProtectedPage>
     }
   ></Route>,
