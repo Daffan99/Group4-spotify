@@ -59,7 +59,7 @@
 .scrolsidebar {
   padding: 0px 0px 0px 20px;
   width: 100%;
-  height: 200px;
+  height: 145px;
 }
 .scrolsidebar:hover {
   overflow-y: scroll;

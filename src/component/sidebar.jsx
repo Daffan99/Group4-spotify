@@ -86,71 +86,71 @@ export default function SideBar() {
             </Flex>
           </Container>
         </Box>
-        <hr className="garis" />
+        <hr className="garis" style={{ width: "200px" }} />
         <br />
         <Box className="scrolsidebar">
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
 
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
-          <Box w="200px" h="35px">
+          <Box w="200px" h="20px">
             <a href="#">Your Playlist</a>
           </Box>
         </Box>

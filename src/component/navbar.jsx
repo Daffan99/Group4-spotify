@@ -52,8 +52,10 @@ export default function Navbar() {
           bgColor="whitesmoke"
           onClick={logout}
           cursor={"pointer"}
+          textAlign={"center"}
+          borderRadius={"20px"}
         >
-          {userSelector?.email}
+          {userSelector?.name}
         </Box>
       </Flex>
     </Box>

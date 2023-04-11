@@ -2,6 +2,7 @@ import MainPage from "../component/main.jsx";
 import Kertas from "../component/konten";
 import Navbar from "../component/navbar";
 import SideBar from "../component/sidebar";
+import Playbar from "../component/playbar";
 import "../css/home.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -42,6 +43,7 @@ export default function HomePage(props) {
           <Navbar />
           <SideBar />
           <Kertas />
+          <Playbar />
         </>
       )}
     </>

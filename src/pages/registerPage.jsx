@@ -27,6 +27,7 @@ import { auth_types } from "../redux/types";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import YupPassword from "yup-password";
+import axios from "axios";
 
 export default function RegisterPage() {
   YupPassword(Yup);
@@ -38,7 +39,6 @@ export default function RegisterPage() {
       email: "",
       email2: "",
       password: "",
-      // password2: "",
       name: "",
       day: "",
       month: "",
@@ -55,11 +55,12 @@ export default function RegisterPage() {
 
       email2: Yup.string()
         .required("You need to confirm your email.")
-        .oneOf([Yup.ref("emai"), null], "The email addresses don't match."),
+        .oneOf([Yup.ref("email"), null], "The email addresses don't match."),
 
       password: Yup.string().min(8, "Your password is too short."),
       name: Yup.string().required("Enter a name for your profile."),
-      day: Yup.number("Enter a valid day of the month")
+      day: Yup.number()
+        .required("enter a valid number")
         .moreThan(0, "Enter a valid day of the month")
         .lessThan(32, "Enter a valid day of the month"),
 
@@ -69,59 +70,55 @@ export default function RegisterPage() {
         .required("Enter a valid year")
         .moreThan(0, "Enter a valid year"),
     }),
+
+    onSubmit: async () => {
+      const { email, name, password, year, month, day, gender } = formik.values;
+
+      const account = { email, name, password, gender };
+      account.birthdte = new Date(year, month, day);
+
+      const checkEmail = await axios
+        .get("http://localhost:2000/user", { params: { email: account.email } })
+        .then((res) => {
+          if (res.data.length) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+
+      if (checkEmail) {
+        return alert("Email already used");
+      } else {
+        await axios.post("http://localhost:2000/user", account).then((res) => {
+          nav("/login");
+        });
+      }
+      console.log(account);
+    },
   });
 
-  // onSubmit: ()=>{
-  //   const account = {formik.value}
-  // }
+  const month = [
+    { name: "Januari", number: 1 },
+    { name: "Februari", number: 2 },
+    { name: "Maret", number: 3 },
+    { name: "April", number: 4 },
+    { name: "May", number: 5 },
+    { name: "Juni", number: 6 },
+    { name: "Juli", number: 7 },
+    { name: "Agustus", number: 8 },
+    { name: "September", number: 9 },
+    { name: "Oktober", number: 10 },
+    { name: "November", number: 11 },
+    { name: "Desember", number: 12 },
+  ];
 
   function inputHandler(event) {
     const { value, id } = event.target;
     formik.setFieldValue(id, value);
   }
 
-  // useEffect(() => {
-  //   const user = JSON.parse(localStorage.getItem("user"));
-  //   if (user?.email) {
-  //     nav("/");
-  //   }
-  // });
-
-  useEffect(() => {
-    console.log("ada yang baru nih");
-  }, [account.password]);
-
-  function login() {
-    if (account.email && account.password) {
-      dispatch({
-        type: auth_types.login,
-        payload: account,
-      });
-    } else {
-      alert("Email dan password wajib diisi ya bro...!!");
-    }
-
-    localStorage.setItem("user", JSON.stringify(account));
-
-    nav("/login");
-  }
-
   const [seePassword, setSeePassword] = useState(false);
-
-  const month = [
-    { number: "1", name: "Januari" },
-    { number: "2", name: "Februari" },
-    { number: "3", name: "Maret" },
-    { number: "4", name: "April" },
-    { number: "5", name: "May" },
-    { number: "6", name: "Juni" },
-    { number: "7", name: "Juli" },
-    { number: "8", name: "Agustus" },
-    { number: "9", name: "September" },
-    { number: "10", name: "Oktober" },
-    { number: "11", name: "November" },
-    { number: "12", name: "Desember" },
-  ];
 
   return (
     <>
@@ -372,9 +369,10 @@ export default function RegisterPage() {
                 placeholder="Month"
                 id="month"
                 _hover={{ borderColor: "black" }}
+                onChange={inputHandler}
               >
                 {month.map((val) => (
-                  <option value={val.number}> {val.name}</option>
+                  <option value={val.number}>{val.name}</option>
                 ))}
               </Select>
 
@@ -568,9 +566,9 @@ export default function RegisterPage() {
                 justifyContent={"center"}
                 alignItems={"center"}
                 letterSpacing={"1.5px"}
-                // onClick={}
+                onClick={formik.handleSubmit}
               >
-                <a href="#"> SIGN UP </a>
+                SIGN UP
               </Flex>
               <Flex
                 w={"123px"}
@@ -588,8 +586,9 @@ export default function RegisterPage() {
                 opacity={"0"}
                 letterSpacing={"1.5px"}
                 _hover={{ opacity: "1" }}
+                onClick={formik.handleSubmit}
               >
-                LOG IN
+                SIGN UP
               </Flex>
             </Box>
           </Box>

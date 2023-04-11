@@ -63,9 +63,9 @@ export default function LoginPage() {
         if (res.data.length) {
           dispatch({
             type: auth_types.login,
-            payload: account,
+            payload: res.data[0],
           });
-          localStorage.setItem("user", JSON.stringify(account));
+          localStorage.setItem("user", JSON.stringify(res.data[0]));
           return nav("/");
         } else {
           alert("email/password salah");
@@ -312,7 +312,7 @@ export default function LoginPage() {
                 letterSpacing={"1.5px"}
                 onClick={login}
               >
-                <a href="#"> LOG IN </a>
+                LOG IN
               </Flex>
               <Flex
                 w={"123px"}

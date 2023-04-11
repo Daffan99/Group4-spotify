@@ -51,6 +51,12 @@
   ],
   "todo": [
     {
+      "date": "",
+      "judul": "nonton",
+      "desc": "nonton bioskop",
+      "id": 1
+    },
+    {
       "date": "2023-04-12",
       "judul": "jalan",
       "desc": "kemana aja",
@@ -67,6 +73,18 @@
       "judul": "dddd",
       "desc": "ddddd",
       "id": 4
+    },
+    {
+      "date": "2023-04-07",
+      "judul": "nnnn",
+      "desc": "mmmm",
+      "id": 5
+    },
+    {
+      "date": "2023-04-12",
+      "judul": "zzzz",
+      "desc": "zzzz12",
+      "id": 6
     }
   ]
 }
